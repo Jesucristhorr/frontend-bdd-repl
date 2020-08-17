@@ -1,2 +1,2 @@
-# frontend-bdd-repl
-Frontend de la materia Base de datos distribuidas.
+# Frontend BDD Replicación
+Esta es la rama de *develop*.
