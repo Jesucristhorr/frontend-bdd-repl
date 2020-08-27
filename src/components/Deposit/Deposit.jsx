@@ -1,20 +1,16 @@
 import React from 'react';
 import { makeStyles } from "@material-ui/core/styles";
 import Menu from '../Menu/MenuBar';
-import { Paper, Typography, Grid, TextField, InputAdornment } from '@material-ui/core';
+import { Paper, Typography, Grid, TextField, InputAdornment, Button } from '@material-ui/core';
 import { AttachMoney } from '@material-ui/icons';
 
 const useStyles = makeStyles((theme) => ({
     paper: {
       padding: theme.spacing(2),
       margin: "auto",
-      width: 250,
+      width: 300,
       minHeight: "auto",
       display: "flex"
-    },
-  
-    margin: {
-      margin: theme.spacing(1),
     },
   
     gray:{
@@ -22,11 +18,12 @@ const useStyles = makeStyles((theme) => ({
     },
   
     textField: {
-      width: '23ch',
+        margin: theme.spacing(1),
+        color: "#404040"
     },
   
     button: {
-      width: '28ch'
+      width: '27ch'
     }
   
 }));
@@ -40,31 +37,49 @@ function Deposit(){
         <div>
             <Menu/>
             <Paper className={classes.paper} elevation={3}>
-                <Grid className={classes.gray} container justify="center" direction="column">
+                <Grid container justify="center" direction="column">
                     <Grid item container justify="center">
-                        <Typography>
-                            Ingresa el número de cuenta:
-                        </Typography>
+                        <Typography className={classes.gray}>Ingresa la cuenta a depositar:</Typography>
                         <Grid item>
-                            <TextField id="depositAcount" label="Cuenta a depositar" placeholder="Ej.: 1234567890" size="" required/>
+                            <TextField 
+                                className={classes.textField} 
+                                id="depositAcount" 
+                                placeholder="Ej.: 1234567890"  
+                                required/>
                         </Grid>
-                    </Grid>
-                    <Grid item>
-                        <TextField 
-                            className={classes.margin}
-                            id="depositAmount"
-                            InputProps={{
-                                startAdornment: (
-                                    <InputAdornment>
-                                        <AttachMoney/>
-                                    </InputAdornment>
-                                )
-                            }}
-                            placeholder="0,00"                        
-                        />
+                        <Grid item>
+                            <TextField 
+                                style={{width:"15ch"}}
+                                id="depositAmount"
+                                label="Cantidad"
+                                InputProps={{
+                                    startAdornment: (
+                                        <InputAdornment className={classes.gray} >
+                                            <AttachMoney/>
+                                        </InputAdornment>
+                                    )
+                                }}
+                                placeholder="0,00"
+                                size="normal"                        
+                            />
+                        </Grid>
+                        <Grid item>
+                            <div style={{ margin: "1rem" }}>
+                                <Button
+                                    className={classes.button} 
+                                    variant="contained" 
+                                    name="deposit" 
+                                    size="small" 
+                                    style={{ background: "#54FFA2", color: "white", fontStyle:"bold"}}
+                                >
+                                    DEPOSITAR
+                                </Button>
+                            </div>
+                        </Grid>
                     </Grid>
                 </Grid>
             </Paper>        
+
         </div>
 
     );
