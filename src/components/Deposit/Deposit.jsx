@@ -1,7 +1,8 @@
 import React from 'react';
 import { makeStyles } from "@material-ui/core/styles";
 import Menu from '../Menu/MenuBar';
-import { Paper, Typography, Grid, TextField } from '@material-ui/core';
+import { Paper, Typography, Grid, TextField, InputAdornment } from '@material-ui/core';
+import { AttachMoney } from '@material-ui/icons';
 
 const useStyles = makeStyles((theme) => ({
     paper: {
@@ -30,6 +31,7 @@ const useStyles = makeStyles((theme) => ({
   
 }));
 
+
 function Deposit(){ 
 
     const classes = useStyles();
@@ -47,7 +49,20 @@ function Deposit(){
                             <TextField id="depositAcount" label="Cuenta a depositar" placeholder="Ej.: 1234567890" size="" required/>
                         </Grid>
                     </Grid>
-
+                    <Grid item>
+                        <TextField 
+                            className={classes.margin}
+                            id="depositAmount"
+                            InputProps={{
+                                startAdornment: (
+                                    <InputAdornment>
+                                        <AttachMoney/>
+                                    </InputAdornment>
+                                )
+                            }}
+                            placeholder="0,00"                        
+                        />
+                    </Grid>
                 </Grid>
             </Paper>        
         </div>
