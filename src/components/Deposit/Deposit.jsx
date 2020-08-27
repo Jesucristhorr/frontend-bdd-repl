@@ -34,7 +34,7 @@ function Deposit(){
     const classes = useStyles();
 
     return ( 
-        <div style={{height:"100%"}}>
+        <div>
             <Menu/>
             <Paper className={classes.paper} elevation={3}>
                 <Grid container justify="center" direction="column">
@@ -71,7 +71,7 @@ function Deposit(){
                                     className={classes.button} 
                                     variant="contained" 
                                     name="deposit" 
-                                    size="small" 
+                                    size="medium" 
                                     style={{ background: "#54FFA2", color: "white", fontStyle:"bold"}}
                                 >
                                     DEPOSITAR
