@@ -34,12 +34,14 @@ function Deposit(){
     const classes = useStyles();
 
     return ( 
-        <div>
+        <div style={{height:"100%"}}>
             <Menu/>
             <Paper className={classes.paper} elevation={3}>
                 <Grid container justify="center" direction="column">
                     <Grid item container justify="center">
-                        <Typography className={classes.gray}>Ingresa la cuenta a depositar:</Typography>
+                        <Grid item>
+                            <Typography className={classes.gray} variant="h6">Ingresa la cuenta a depositar:</Typography>
+                        </Grid>
                         <Grid item>
                             <TextField 
                                 className={classes.textField} 
@@ -54,13 +56,13 @@ function Deposit(){
                                 label="Cantidad"
                                 InputProps={{
                                     startAdornment: (
-                                        <InputAdornment className={classes.gray} >
-                                            <AttachMoney/>
+                                        <InputAdornment>
+                                            <AttachMoney className={classes.gray} />
                                         </InputAdornment>
                                     )
                                 }}
                                 placeholder="0,00"
-                                size="normal"                        
+                                size="medium"                        
                             />
                         </Grid>
                         <Grid item>
@@ -79,9 +81,7 @@ function Deposit(){
                     </Grid>
                 </Grid>
             </Paper>        
-
         </div>
-
     );
 }
  
