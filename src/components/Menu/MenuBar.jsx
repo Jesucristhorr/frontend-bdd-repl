@@ -145,7 +145,7 @@ function MenuBar(props) {
             <Menu />
           </IconButton>
           <Typography variant="h5" style={{ flexGrow: 1, textAlign: "center" }}>
-            Banco distribuido
+            BBDD
           </Typography>
           <img src={Codefilia} alt="logo" width="150px" height="70px" />
         </Toolbar>
