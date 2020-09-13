@@ -91,8 +91,8 @@ function App(props) {
           : "";
         break;
       case "password":
-        errors.password = !value.match(/[.\s\S\d\D\w\W]{4,}/i)
-          ? "Contraseña mayor o igual a 4 dígitos."
+        errors.password = !value.match(/[.\s\S\d\D\w\W]{3,}/i)
+          ? "Contraseña mayor o igual a 3 dígitos."
           : "";
         break;
       default:
